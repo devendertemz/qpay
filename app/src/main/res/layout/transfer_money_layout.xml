@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+        <LinearLayout
+            android:layout_marginBottom="@dimen/_70sdp"
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/_10sdp"
+            android:layout_marginRight="@dimen/_10sdp"
+
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/_5sdp"
+                android:text="@string/transfer_money"
+                android:textColor="@color/new_white"
+                android:textSize="@dimen/_15sdp"
+                android:textStyle="bold" />
+
+            <!--
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+            &lt;!&ndash;
+                        <soup.neumorphism.NeumorphImageView
+                            android:layout_width="@dimen/_80sdp"
+                            android:layout_height="@dimen/_80sdp"
+                            android:layout_gravity="left"
+                            android:padding="@dimen/_20sdp"
+                            android:src="@drawable/to_contact"
+                            android:tint="@color/new_white"
+                            app:neumorph_shadowColorDark="@color/dark_shadow"
+                            app:neumorph_shadowColorLight="@color/LIGHT_sadow"
+                            app:neumorph_shapeAppearance="@style/NeumorphismImageLarge"
+                            app:neumorph_shapeType="basin" />
+
+                        <soup.neumorphism.NeumorphImageView
+                            android:layout_width="@dimen/_80sdp"
+                            android:layout_height="@dimen/_80sdp"
+
+                            android:padding="@dimen/_20sdp"
+                            android:src="@drawable/to_contact"
+                            android:tint="@color/new_white"
+                            app:neumorph_shadowColorDark="@color/dark_shadow"
+                            app:neumorph_shadowColorLight="@color/LIGHT_sadow"
+                            app:neumorph_shapeAppearance="@style/NeumorphismImageLarge"
+                            app:neumorph_shapeType="basin" />
+
+                        <soup.neumorphism.NeumorphImageView
+                            android:layout_width="@dimen/_80sdp"
+                            android:layout_height="@dimen/_80sdp"
+
+                            android:padding="@dimen/_20sdp"
+                            android:src="@drawable/to_self"
+                            android:tint="@color/new_white"
+                            app:neumorph_shadowColorDark="@color/dark_shadow"
+                            app:neumorph_shadowColorLight="@color/LIGHT_sadow"
+                            app:neumorph_shapeAppearance="@style/NeumorphismImageLarge"
+                            app:neumorph_shapeType="basin" />&ndash;&gt;
+
+
+
+                    </LinearLayout>
+            -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <LinearLayout
+
+
+                    android:layout_width="wrap_content"
+
+
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout style="@style/LinerLayoutIcon">
+
+                        <ImageView
+                            style="@style/ImageIcon"
+                            android:src="@drawable/to_contact" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/texticon"
+
+                        android:text="To Contact" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout style="@style/LinerLayoutIcon">
+
+
+                        <ImageView
+
+                            style="@style/ImageIcon"
+                            android:src="@drawable/bank" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/texticon"
+
+                        android:text="To Bank" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout style="@style/LinerLayoutIcon">
+
+
+                        <ImageView
+
+                            style="@style/ImageIcon"
+                            android:src="@drawable/to_self" />
+                    </LinearLayout>
+
+                    <TextView
+
+                        style="@style/texticon"
+                        android:text="To Self" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:padding="@dimen/_5sdp"
+                android:text="Utilities"
+                android:textColor="@color/new_white"
+                android:textSize="@dimen/_15sdp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout style="@style/LinerLayoutIcon">
+
+
+                        <ImageView
+
+                            style="@style/ImageIcon"
+                            android:src="@drawable/mobile_recharge" />
+                    </LinearLayout>
+
+                    <TextView
+
+                        style="@style/texticon"
+
+                        android:text=" Recharge" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout style="@style/LinerLayoutIcon">
+
+
+                        <ImageView
+
+                            style="@style/ImageIcon"
+                            android:src="@drawable/electricity" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/texticon"
+                        android:text="Electricity" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout style="@style/LinerLayoutIcon">
+
+
+                        <ImageView
+
+                            style="@style/ImageIcon"
+                            android:src="@drawable/dth" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/texticon"
+
+                        android:text="DTH" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout style="@style/LinerLayoutIcon">
+
+
+                        <ImageView
+                            style="@style/ImageIcon"
+                            android:src="@drawable/water" />
+                    </LinearLayout>
+
+                    <TextView
+
+                        style="@style/texticon"
+                        android:text="@string/water" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout style="@style/LinerLayoutIcon">
+
+
+                        <ImageView
+
+                            style="@style/ImageIcon"
+                            android:src="@drawable/credit_card_bill" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/texticon"
+
+                        android:text="Credit card bill" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout style="@style/LinerLayoutIcon">
+
+
+                        <ImageView
+
+                            style="@style/ImageIcon"
+                            android:src="@drawable/router" />
+                    </LinearLayout>
+
+                    <TextView
+
+                        style="@style/texticon"
+                        android:text="Broadband " />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="3">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout style="@style/LinerLayoutIcon">
+
+
+                        <ImageView
+                            style="@style/ImageIcon"
+
+                            android:src="@drawable/gas" />
+                    </LinearLayout>
+
+                    <TextView
+                        style="@style/texticon"
+
+                        android:text="Book a Cylinder" />
+                </LinearLayout>
+
+                <LinearLayout
+
+                    android:layout_width="@dimen/_80sdp"
+
+                    android:layout_height="@dimen/_80sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:orientation="vertical">
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="@dimen/_80sdp"
+
+                    android:layout_height="@dimen/_80sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:orientation="vertical">
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        android:orientation="vertical"
+        tools:context="com.quickpay.qpay.UI.Activity.activities.WelcomeActivityBinding">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--<soup.neumorphism.NeumorphImageView
+                android:layout_width="@dimen/_42sdp"
+                android:layout_height="@dimen/_42sdp"
+                android:padding="@dimen/_14sdp"
+                android:src="@drawable/back"
+                android:tint="@color/font_white"
+                app:neumorph_shadowColorDark="@color/dark_shadow"
+                app:neumorph_shadowColorLight="@color/LIGHT_sadow"
+                app:neumorph_shapeAppearance="@style/NeumorphismImageSmall" />
+
+    -->
+
+
+            <soup.neumorphism.NeumorphImageView
+                android:layout_width="@dimen/_150sdp"
+                android:layout_height="@dimen/_150sdp"
+                android:layout_gravity="center"
+                android:padding="@dimen/_15sdp"
+                android:src="@drawable/quickpay_logo"
+                app:neumorph_shadowColorDark="@color/dark_shadow"
+                app:neumorph_shadowColorLight="@color/LIGHT_sadow"
+                app:neumorph_shapeAppearance="@style/NeumorphismCardImage" />
+
+
+            <soup.neumorphism.NeumorphCardView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                app:neumorph_shadowColorDark="@color/dark_shadow"
+                app:neumorph_shadowColorLight="@color/LIGHT_sadow"
+                app:neumorph_shapeType="flat">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+
+                    android:orientation="vertical"
+                    android:padding="@dimen/_2sdp">
+
+                    <TextView
+                        android:id="@+id/button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="8dp"
+                        android:fontFamily="@font/opensans_bold"
+                        android:padding="@dimen/_8sdp"
+                        android:text="sign in"
+                        android:textAllCaps="true"
+
+                        android:textColor="@color/new_white"
+                        android:textStyle="bold" />
+
+
+                    <soup.neumorphism.NeumorphCardView
+                        style="@style/Widget.Neumorph.CardView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_10sdp"
+
+                        app:neumorph_shadowColorDark="@color/dark_shadow"
+                        app:neumorph_shadowColorLight="@color/LIGHT_sadow">
+
+                        <EditText
+                            android:id="@+id/ET_Number"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:background="@null"
+                            android:gravity="left"
+                            android:hint="Enter mobile number"
+                            android:inputType="number"
+                            android:padding="@dimen/_10sdp"
+                            android:textColor="@color/font_white"
+                            android:textColorHint="@color/font_white">
+
+                        </EditText>
+
+
+                    </soup.neumorphism.NeumorphCardView>
+
+
+                    <soup.neumorphism.NeumorphCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        app:neumorph_shadowColorDark="@color/dark_shadow"
+                        app:neumorph_shadowColorLight="@color/LIGHT_sadow">
+
+                        <EditText
+                            android:id="@+id/ET_Password"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_40sdp"
+                            android:background="@null"
+                            android:gravity="left"
+                            android:hint="Enter Password"
+                            android:inputType="textPassword"
+                            android:padding="@dimen/_10sdp"
+                            android:textColor="@color/font_white"
+                            android:textColorHint="@color/font_white">
+
+                        </EditText>
+
+
+                    </soup.neumorphism.NeumorphCardView>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right"
+                        android:layout_marginRight="@dimen/_20sdp"
+                        android:fontFamily="@font/opensans_bold"
+                        android:onClick="onClickTV_ForgetPassword"
+                        android:text="Forget Password"
+                        android:textAllCaps="false"
+
+                        android:textColor="@color/new_white"
+                        android:textStyle="bold" />
+
+
+
+                    <soup.neumorphism.NeumorphTextView
+                        android:onClick="onClickSignIN"
+
+                        android:layout_width="@dimen/_200sdp"
+                        android:text="Sign in"
+                        android:textStyle="bold"
+
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/_20sdp"
+                        android:background="@drawable/spleshscreen_bglayout"
+                        android:fontFamily="@font/robotomedium"
+
+                        android:gravity="center_vertical"
+                        android:padding="@dimen/_5sdp"
+                        android:textAlignment="center"
+                        android:textColor="@color/new_white"
+                        android:textSize="@dimen/_18sdp"
+                        app:neumorph_shadowColorDark="@color/dark_shadow"
+                        app:neumorph_shadowColorLight="@color/LIGHT_sadow"
+                        app:neumorph_shapeType="flat"
+                        tools:ignore="RtlCompat" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:layout_marginBottom="@dimen/_20sdp"
+                        android:gravity="center">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:fontFamily="@font/opensans_bold"
+                            android:text="Don't have an account ?"
+                            android:textAllCaps="false"
+
+                            android:textColor="@color/new_white"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/TV_SignUp"
+
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:fontFamily="@font/opensans_bold"
+                            android:onClick="onClickTV_SignUp"
+                            android:text="Sign Up"
+                            android:textAllCaps="false"
+
+                            android:textColor="@color/new_pink"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </soup.neumorphism.NeumorphCardView>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</layout>

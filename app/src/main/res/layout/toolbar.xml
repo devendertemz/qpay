@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/tools"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/background"
+    android:minHeight="?attr/actionBarSize"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+    local:titleTextAppearance="@style/AppTheme.Toolbar.Title"
+    app:ignore="NamespaceTypo">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <soup.neumorphism.NeumorphCardView
+            android:id="@+id/profile"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_width="@dimen/_58sdp"
+            android:layout_height="@dimen/_58sdp"
+
+            app:neumorph_shadowColorDark="@color/dark_shadow"
+            app:neumorph_shadowColorLight="@color/LIGHT_sadow"
+            app:neumorph_shapeAppearance="@style/NeumorphismCardImage">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="2sp"
+                android:background="@drawable/circle_gray_dark">
+
+            </de.hdodenhof.circleimageview.CircleImageView>
+
+        </soup.neumorphism.NeumorphCardView>
+        <!--
+
+                <soup.neumorphism.NeumorphImageView
+                    android:id="@+id/image_view"
+                    android:layout_width="58sp"
+                    android:layout_height="56dp"
+                    app:neumorph_shadowColorDark="@color/font_white"
+                    app:neumorph_shadowElevation="6dp"
+                    app:neumorph_backgroundColor="@color/background_color"
+                    app:neumorph_strokeColor="@color/stroke_color"
+                    app:neumorph_strokeWidth="@dimen/stroke_width"
+                    android:layout_gravity="center_horizontal"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/circle_gray_dark"
+                    />
+
+        -->
+
+
+        <!--<TextView
+
+
+
+
+
+            android:layout_toStartOf="@+id/notification"
+            android:layout_toLeftOf="@+id/notification"
+            android:fontFamily="@font/blacklist"
+            android:gravity="center"
+            android:text="Prive"
+            android:textColor="@color/darkGrey"
+            android:textSize="30sp"
+            android:textStyle="" />-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="11dp"
+            android:gravity="center"
+            android:layout_toStartOf="@+id/notification"
+            android:layout_toEndOf="@+id/profile"
+            android:padding="8dp"
+            android:text="@string/quick_payY"
+            android:textSize="28sp"
+            android:textStyle="bold">
+
+        </TextView>
+
+        <soup.neumorphism.NeumorphImageView
+            android:id="@+id/notification"
+            android:layout_width="@dimen/_58sdp"
+            android:layout_height="@dimen/_58sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="7dp"
+            android:layout_marginRight="7dp"
+            android:src="@drawable/ic_notifications"
+            android:tint="@color/icon_color"
+
+            android:padding="@dimen/_20sdp"
+            app:neumorph_shadowColorDark="@color/dark_shadow"
+            app:neumorph_shadowColorLight="@color/LIGHT_sadow"
+            app:neumorph_shapeAppearance="@style/NeumorphismImageLarge"
+            app:neumorph_shapeType="flat" />
+
+
+    </RelativeLayout>
+
+</androidx.appcompat.widget.Toolbar>
+
+
+
+

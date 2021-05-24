@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/twocolorcombinebg"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <RelativeLayout
+                android:id="@+id/ll1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#26272C">
+
+                <!--      <androidx.cardview.widget.CardView
+                          app:cardPreventCornerOverlap="true"
+
+                          android:padding="@dimen/_20sdp"
+                          android:layout_margin="@dimen/_7sdp"
+                          android:id="@+id/profile"
+                          app:cardBackgroundColor="#000000"
+                          app:cardElevation="@dimen/_10sdp"
+                          app:cardCornerRadius="@dimen/_50sdp"
+                          android:layout_width="@dimen/_40sdp"
+                          android:layout_height="@dimen/_40sdp"
+                          android:layout_alignParentStart="true">
+
+                          <de.hdodenhof.circleimageview.CircleImageView
+                              android:layout_gravity="center"
+                              android:layout_width="match_parent"
+                              android:layout_height="@dimen/_38sdp"
+                              android:layout_margin="5sp"
+
+                              android:background="@drawable/pic"/>
+
+                      </androidx.cardview.widget.CardView>-->
+
+                <soup.neumorphism.NeumorphCardView
+                    android:id="@+id/profile"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    app:neumorph_shadowColorDark="@color/dark_shadow"
+                    app:neumorph_shadowColorLight="@color/LIGHT_sadow"
+                    app:neumorph_shapeAppearance="@style/NeumorphismCardImage">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="2sp"
+                        android:background="@drawable/pic">
+
+                    </de.hdodenhof.circleimageview.CircleImageView>
+
+                </soup.neumorphism.NeumorphCardView>
+
+
+                <TextView
+                    android:id="@+id/quickpay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="5dp"
+                    android:layout_toStartOf="@+id/notification"
+                    android:layout_toEndOf="@+id/profile"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="@string/quick_payY"
+                    android:textSize="28sp"
+                    android:textStyle="bold">
+
+                </TextView>
+
+                <soup.neumorphism.NeumorphImageView
+                    android:id="@+id/notification"
+                    android:layout_width="@dimen/_50sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginEnd="7dp"
+                    android:layout_marginRight="7dp"
+                    android:padding="@dimen/_10sdp"
+                    android:scaleType="centerInside"
+
+                    android:src="@drawable/ic_notifications"
+                    android:tint="@color/icon_color"
+                    app:neumorph_shadowColorDark="@color/dark_shadow"
+                    app:neumorph_shadowColorLight="@color/LIGHT_sadow"
+                    app:neumorph_shapeAppearance="@style/NeumorphismImageLarge"
+                    app:neumorph_shapeType="flat" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_3sdp"
+                    android:layout_below="@+id/quickpay"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:background="#1B1B1E" />
+
+            </RelativeLayout>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/ll1"
+                android:background="@drawable/twocolorcombinebg">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <soup.neumorphism.NeumorphCardView
+
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_120sdp"
+                        android:layout_marginLeft="@dimen/_5sdp"
+                        android:layout_marginTop="@dimen/_20sdp"
+                        android:layout_marginRight="@dimen/_5sdp"
+                        app:neumorph_shadowColorDark="@color/dark_shadow"
+                        app:neumorph_shadowColorLight="@color/LIGHT_sadow"
+                        app:neumorph_shapeType="flat">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal"
+                            android:padding="@dimen/_2sdp"
+                            android:weightSum="2">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="@dimen/_85sdp"
+                                    android:layout_height="@dimen/_85sdp"
+                                    android:src="@drawable/quickpay_logo2" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="bottom"
+                                    android:layout_marginLeft="-5dp"
+                                    android:layout_marginBottom="@dimen/_2sdp"
+                                    android:text="@string/credit"
+                                    android:textColor="@color/font_white"
+                                    android:textStyle="bold" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1"
+                                android:orientation="horizontal">
+
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:layout_marginBottom="@dimen/_5sdp"
+                                    android:background="#CEC9C9" />
+
+                                <LinearLayout
+                                    android:layout_width="@dimen/_90sdp"
+                                    android:layout_height="@dimen/_90sdp"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                    <ImageView
+
+                                        android:layout_width="@dimen/_43sdp"
+                                        android:layout_height="@dimen/_17sdp"
+                                        android:src="@drawable/upi_icon" />
+
+                                    <View
+                                        android:layout_width="match_parent"
+                                        android:layout_height="@dimen/_5sdp"
+                                        android:layout_marginLeft="@dimen/_5sdp"
+                                        android:layout_marginTop="@dimen/_5sdp"
+                                        android:background="#CEC9C9" />
+
+                                    <View
+                                        android:layout_width="@dimen/_70sdp"
+                                        android:layout_height="@dimen/_3sdp"
+                                        android:layout_gravity="left"
+                                        android:layout_marginStart="@dimen/_7sdp"
+                                        android:layout_marginTop="@dimen/_5sdp"
+                                        android:background="#CEC9C9" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                    </soup.neumorphism.NeumorphCardView>
+
+                    <include
+                        android:id="@+id/transfer_money_layout"
+                        layout="@layout/transfer_money_layout" />
+                </LinearLayout>
+
+            </ScrollView>
+
+            <LinearLayout
+                android:foregroundGravity="center"
+                android:background="@drawable/quarter_circle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:gravity="bottom"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <include
+                        android:id="@+id/customfloatingactionbutton"
+                        layout="@layout/customfloatingactionbutton" />
+
+                </LinearLayout>
+
+
+                <!--   <View
+           android:layout_width="match_parent"
+           android:layout_height="@dimen/_2sdp"
+           android:background="#17171B" />
+                   <LinearLayout
+           android:layout_width="match_parent"
+
+           android:layout_height="match_parent"
+           android:layout_gravity="center"
+           android:gravity="center"
+           android:orientation="horizontal"
+           android:weightSum="4">
+
+                       <soup.neumorphism.NeumorphCardView
+           android:layout_width="wrap_content"
+           android:layout_gravity="center"
+           android:layout_height="@dimen/_55sdp"
+           android:layout_weight="1"
+           app:neumorph_shadowColorDark="@color/dark_shadow"
+           app:neumorph_shadowColorLight="@color/LIGHT_sadow"/>
+
+
+                       <soup.neumorphism.NeumorphCardView
+           android:layout_width="0dp"
+
+           android:layout_height="@dimen/_55sdp"
+           android:layout_weight="1.8"
+           android:padding="@dimen/_10sdp"
+           app:neumorph_strokeColor="@color/font_white"
+           app:neumorph_shadowColorDark="@color/dark_shadow"
+           app:neumorph_shadowColorLight="@color/LIGHT_sadow" >
+
+                           <TextView
+           android:layout_margin="@dimen/_3sdp"
+           android:gravity="center"
+           android:background="@drawable/spleshscreen_bglayout"
+           android:layout_gravity="center"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:text="Qpay Scan"
+           android:textColor="@color/new_white"
+           android:textSize="@dimen/_15sdp"
+                   />
+
+                       </soup.neumorphism.NeumorphCardView>
+
+                       <soup.neumorphism.NeumorphCardView
+           android:layout_width="wrap_content"
+
+           android:layout_height="@dimen/_55sdp"
+           android:layout_weight="1"
+           app:neumorph_shadowColorDark="@color/dark_shadow"
+           app:neumorph_shadowColorLight="@color/LIGHT_sadow"/>
+
+
+
+
+
+                   </LinearLayout>
+                   -->
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+</layout>

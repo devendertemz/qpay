@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#242529"
+        tools:context=".UI.Activity.ScannerActivity"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <soup.neumorphism.NeumorphImageView
+                android:id="@+id/onBackpress"
+                android:layout_width="@dimen/_50sdp"
+
+                android:layout_height="@dimen/_50sdp"
+                android:padding="@dimen/_5sdp"
+                android:scaleType="centerInside"
+
+                android:src="@drawable/back"
+                android:tint="@color/icon_color"
+                app:neumorph_shadowColorDark="@color/dark_shadow"
+                app:neumorph_shadowColorLight="@color/LIGHT_sadow"
+                app:neumorph_shapeAppearance="@style/NeumorphismImageLarge"
+                app:neumorph_shapeType="flat" />
+
+
+            <TextView
+                android:layout_marginLeft="@dimen/_50sdp"
+                android:id="@+id/toolbar_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/robotomedium"
+                android:text="@string/scan_amp_pay"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                android:textColor="@color/new_white"
+                android:textSize="@dimen/_18sdp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_3sdp"
+            android:background="#1B1B1E" />
+
+      <!--  <TextView
+            android:id="@+id/yurwall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/Scan_barcode"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/new_white"
+            android:textSize="15dp"
+            android:textStyle="bold" />-->
+
+<!--
+        <soup.neumorphism.NeumorphCardView
+
+            android:layout_width="@dimen/_200sdp"
+            android:layout_height="wrap_content"
+            app:neumorph_backgroundColor="@color/cardbgcolor"
+
+            app:neumorph_shadowColorDark="@color/dark_shadow"
+            app:neumorph_shadowColorLight="@color/LIGHT_sadow"
+            app:neumorph_shapeType="flat">
+
+            <TextView
+                android:id="@+id/getbarCodeAddress"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_30ssp"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/_2sdp"
+                android:fontFamily="@font/robotomedium"
+                android:gravity="center_vertical"
+                android:textAlignment="center"
+                android:textColor="@color/new_white"
+
+                tools:ignore="RtlCompat" />
+        </soup.neumorphism.NeumorphCardView>-->
+        <!--    <com.budiyev.android.codescanner.CodeScannerView
+                android:id="@+id/scannerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:frameAspectRatioHeight="1"
+                app:frameAspectRatioWidth="1"
+                app:frameColor="@android:color/white"
+                app:frameCornersRadius="0dp"
+                app:frameCornersSize="50dp"
+                app:frameSize="0.75"
+                app:frameThickness="2dp"
+                app:maskColor="#77000000" />-->
+
+
+        <com.budiyev.android.codescanner.CodeScannerView
+            android:layout_marginTop="@dimen/_20sdp"
+            android:id="@+id/scannerView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_250sdp"
+            app:autoFocusButtonColor="@color/new_white"
+            app:autoFocusButtonVisible="true"
+            app:flashButtonColor="@android:color/white"
+            app:flashButtonVisible="true"
+            app:frameColor="@android:color/white"
+            app:frameCornersSize="50dp"
+            app:frameCornersRadius="10dp"
+            app:frameAspectRatioWidth="1"
+            app:frameAspectRatioHeight="1"
+            app:frameSize="0.75"
+            app:frameThickness="2dp"
+            app:maskColor="#242529" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Scan QR code to pay"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/new_white"
+            android:textSize="@dimen/_16sdp"
+            />
+
+        <soup.neumorphism.NeumorphTextView
+            android:id="@+id/openQR_code"
+            android:layout_width="@dimen/_200sdp"
+
+            android:layout_height="@dimen/_40sdp"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/_20sdp"
+            android:background="@drawable/spleshscreen_bglayout"
+            android:drawableLeft="@drawable/ic_pay"
+            android:fontFamily="@font/robotomedium"
+
+            android:gravity="center_vertical"
+            android:padding="@dimen/_5sdp"
+            android:text="Show my QR Code"
+            android:textAlignment="center"
+            android:textColor="@color/new_white"
+            android:textSize="@dimen/_15sdp"
+            app:neumorph_shadowColorDark="@color/dark_shadow"
+            app:neumorph_shadowColorLight="@color/LIGHT_sadow"
+            app:neumorph_shapeType="flat"
+            tools:ignore="RtlCompat" />
+
+    </LinearLayout>
+</layout>

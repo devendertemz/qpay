@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#1A1B1E</color>
+    <color name="purple_500">#1A1B1E</color>
+    <color name="purple_700">#1A1B1E</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="dark_shadow">#060607</color>
+
+
+    <color name="font_white">#FFFFFF</color>
+    <color name="font_gray">#B8B8B8</color>
+
+    <color name="purple_light">#9C3B57</color>
+    <color name="purple_middel_light">#C1522F</color>
+
+
+    <color name="purple_dark">#C1721C</color>
+    <color name="font_black">#000000</color>
+
+    <color name="EditText_Ligtpurple">#1A1B1E</color>
+
+    <color name="LIGHT_sadow">#2C2D2F</color>
+    <color name="new_gray">#585A5E</color>
+    <color name="new_darkblue">#062560</color>
+    <color name="new_blue">#013698</color>
+    <color name="new_ligit_blue">#0255D8</color>
+    <color name="new_white">#C9CBCD</color>
+    <color name="new_lightskyblue">#5F99C7</color>
+    <color name="new_cirlc_blue">#1481B7</color>
+    <color name="new_pink">#B7244C</color>
+    <color name="new_yellow">#F7931E</color>
+    <color name="background">#26272C</color>
+    <color name="background2">#26272C</color>
+    <color name="icon_color">#DEDEE8</color>
+
+    <color name="new_pink2">#591F2F</color>
+    <color name="new_yellow2">#4A2A04</color>
+    <color name="icon_tine_color">#0C0C0E</color>
+    <color name="gray_opacity">#B5474242</color>
+    <color name="toolbar">#242529</color>
+    <color name="cardbgcolor">#17181D</color>
+
+
+
+
+
+
+
+
+
+
+</resources>

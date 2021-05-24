@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">q-pay</string>
+    <string name="quick_pay">quickpay</string>
+
+    <string name="now_make_payment">
+       <font color='#4C07AF'> Payment</font><font color='#FFFFFF'> Dots</font>
+
+     </string>
+    <string name="mobile_number">Enter your mobile number</string>
+    <string name="BHIM_UPI">To use BHIM UPI, please enter the mobile number linked to your bank account</string>
+
+    <string name="Terms">
+       <font color='#FFFFFF'>  By proceeding, you are agreeing to Q-pay’s</font><font color='#4C07AF'>  Terms &amp; Conditions</font>
+
+     </string>
+    <string name="quick_payY">
+         <font color='#B7244C'> QUICK</font><font color='#F7931E'> PAY</font>
+
+         </string>
+    <string name="transfer_money">Transfer Money</string>
+    <string name="water">Water</string>
+
+    <style name="neumorphismImageLarge">
+        <item name="neumorph_cornerFamily">rounded</item>
+        <item name="neumorph_cornerSize">32dp</item>
+    </style>
+</resources>
