@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+
+        <variable
+            name="scannerModel"
+            type="com.quickpay.qpay.model.ScannerModel" />
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/twocolorcombinebg"
+        android:orientation="vertical"
+        tools:context=".UI.Activity.PayAmountActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/toolbar"
+            android:orientation="horizontal">
+
+            <soup.neumorphism.NeumorphImageView
+                android:id="@+id/onBackpress"
+                android:layout_width="@dimen/_50sdp"
+
+                android:layout_height="@dimen/_50sdp"
+                android:padding="@dimen/_5sdp"
+                android:rotation="45"
+
+                android:scaleType="centerInside"
+                android:src="@android:drawable/ic_input_add"
+                android:tint="@color/icon_color"
+                app:neumorph_shadowColorDark="@color/dark_shadow"
+                app:neumorph_shadowColorLight="@color/LIGHT_sadow"
+                app:neumorph_shapeAppearance="@style/NeumorphismImageLarge"
+                app:neumorph_shapeType="flat" />
+
+
+        </LinearLayout>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_margin="@dimen/_8sdp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:fontFamily="@font/robotomedium"
+                    android:padding="@dimen/_5sdp"
+
+                    android:text='@{"You are paying "+scannerModel.fullname}'
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    android:textColor="@color/font_white"
+                    android:textSize="@dimen/_15sdp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:fontFamily="@font/robotomedium"
+                    android:text='@{scannerModel.id+scannerModel.fullname+"@okicici"}'
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    android:textColor="@color/new_white"
+                   />
+
+                <soup.neumorphism.NeumorphCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_250sdp"
+
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_10sdp"
+                    app:neumorph_shadowColorDark="@color/dark_shadow"
+                    app:neumorph_shadowColorLight="@color/LIGHT_sadow"
+                    app:neumorph_shapeType="flat">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/recbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:cardBackgroundColor="@color/purple_500"
+                        app:cardCornerRadius="20dp"
+                        app:cardElevation="10dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="@dimen/_5sdp"
+                            android:background="@color/cardbgcolor"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_marginLeft="@dimen/_5sdp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:fontFamily="@font/robotomedium"
+                                android:padding="@dimen/_5sdp"
+                                android:text="Amount to be paid"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                                android:textColor="@color/new_white"
+                                android:textSize="@dimen/_15sdp"
+                                android:textStyle="bold" />
+
+                            <EditText
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_50sdp"
+                                android:background="@null"
+                                android:drawableLeft="@drawable/rupess"
+                                android:layout_marginLeft="@dimen/_5sdp"
+
+                                android:drawablePadding="@dimen/_3sdp"
+                                android:drawableTint="@color/new_white"
+                                android:hint="0"
+                                android:textColor="@color/new_white"
+                                android:textColorHint="@color/new_white"
+                                android:textSize="@dimen/_20sdp">
+
+                            </EditText>
+
+                            <EditText
+                                android:layout_marginLeft="@dimen/_5sdp"
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@null"
+
+                                android:drawableTint="@color/new_white"
+                                android:hint="What is this for"
+                                android:textColor="@color/new_white"
+                                android:textColorHint="@color/new_white"
+                                android:textSize="@dimen/_15sdp" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/_3sdp"
+                                android:layout_margin="@dimen/_8sdp"
+                                android:background="@color/background2" />
+
+                            <TextView
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/_5sdp"
+                                android:layout_marginBottom="@dimen/_10sdp"
+                                android:text="Pay with"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                                android:textColor="@color/new_white"
+                                android:textSize="@dimen/_15sdp"
+
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+                </soup.neumorphism.NeumorphCardView>
+
+
+                <soup.neumorphism.NeumorphTextView
+                    android:id="@+id/openSacnner"
+                    android:layout_width="@dimen/_200sdp"
+
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/_20sdp"
+                    android:background="@drawable/spleshscreen_bglayout"
+                    android:fontFamily="@font/robotomedium"
+
+                    android:gravity="center_vertical"
+                    android:padding="@dimen/_5sdp"
+                    android:text="Pay now"
+                    android:textAlignment="center"
+                    android:textColor="@color/new_white"
+                    android:textSize="@dimen/_15sdp"
+                    app:neumorph_shadowColorDark="@color/dark_shadow"
+                    app:neumorph_shadowColorLight="@color/LIGHT_sadow"
+                    app:neumorph_shapeType="flat"
+                    tools:ignore="RtlCompat" />
+
+
+            </LinearLayout>
+
+
+        </ScrollView>
+
+    </LinearLayout>
+</layout>
