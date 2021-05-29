@@ -1,9 +1,11 @@
-package com.quickpay.qpay;
+package com.quickpay.qpay.UI.Activity;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.ViewModelProviders;
 
 import android.app.Dialog;
 import android.content.Context;
@@ -14,24 +16,21 @@ import android.view.View;
 import android.view.animation.OvershootInterpolator;
 import android.widget.Toast;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.android.play.core.appupdate.AppUpdateInfo;
 import com.google.android.play.core.appupdate.AppUpdateManager;
 import com.google.android.play.core.appupdate.AppUpdateManagerFactory;
 import com.google.android.play.core.install.model.AppUpdateType;
 import com.google.android.play.core.install.model.UpdateAvailability;
-import com.google.android.play.core.tasks.OnCompleteListener;
 import com.google.android.play.core.tasks.OnSuccessListener;
 import com.google.android.play.core.tasks.Task;
-import com.quickpay.qpay.UI.Activity.RegisterationActivity;
-import com.quickpay.qpay.UI.Activity.ScannerActivity;
-import com.quickpay.qpay.UI.Activity.WalletReceiveActivity;
+import com.quickpay.qpay.R;
 import com.quickpay.qpay.databinding.ActivityMainBinding;
+import com.quickpay.qpay.models.response.AvlBalance;
+import com.quickpay.qpay.sharedPref.MyPreferences;
+import com.quickpay.qpay.sharedPref.PrefConf;
 import com.quickpay.qpay.util.AppUtils;
-
-import javax.xml.transform.Result;
-
-import soup.neumorphism.NeumorphCardView;
+import com.quickpay.qpay.viewmodel.AvlBalanceViewModel;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     ActivityMainBinding activityMainBinding;
@@ -46,21 +45,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     OvershootInterpolator interpolator = new OvershootInterpolator();
     private int REQUEST_CODE = 11;
 
+
+    private AvlBalanceViewModel viewModel;
+    String id;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
       //  setContentView(R.layout.activity_main);
-
-        activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-        view = activityMainBinding.getRoot();
-        context = MainActivity.this;
-        dialog = AppUtils.hideShowProgress(context);
         InitView();
+        GetAvlbalance();
+
+
 
     }
 
     private void InitView() {
 
+        activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        view = activityMainBinding.getRoot();
+        context = MainActivity.this;
+        dialog = AppUtils.hideShowProgress(context);
+        dialog.show();
 
 
         activityMainBinding.customfloatingactionbutton.fabtwo.setAlpha(0f);
@@ -93,6 +99,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
             }
         });
+
+        id  = String.valueOf(MyPreferences.getInstance(getApplication()).getInteger(PrefConf.KEY_USER_ID, 0));
 
     }
 
@@ -190,4 +198,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }
     }
+
+    private void GetAvlbalance()
+    {
+
+        viewModel= ViewModelProviders.of(MainActivity.this).get(AvlBalanceViewModel.class);
+        viewModel.getavlbalanceObserve().observe(this, new Observer<AvlBalance>() {
+            @Override
+            public void onChanged(AvlBalance avlBalance) {
+                activityMainBinding.creditAmount.setText(avlBalance.getCreditAmt());
+                Toast.makeText(context, avlBalance.getPaymentId()+"", Toast.LENGTH_SHORT).show();
+                dialog.dismiss();
+
+            }
+        });
+        viewModel.Error().observe(this, new Observer<String>() {
+            @Override
+            public void onChanged(String s) {
+                activityMainBinding.creditAmount.setText("0.00");
+
+                dialog.dismiss();
+
+            }
+        });
+        viewModel.makeApiCall(id);
+    }
+
+
 }

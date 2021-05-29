@@ -1,12 +1,8 @@
 package com.quickpay.qpay.UI.Activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
-import android.os.Bundle;
 
 import com.daimajia.androidanimations.library.Techniques;
-import com.quickpay.qpay.MainActivity;
 import com.quickpay.qpay.R;
 import com.viksaa.sssplash.lib.activity.AwesomeSplash;
 import com.viksaa.sssplash.lib.cnst.Flags;

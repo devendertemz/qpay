@@ -21,7 +21,7 @@
             android:name=".UI.Activity.ScannerActivity"
             android:windowSoftInputMode="stateHidden" />
         <activity
-            android:name=".MainActivity"
+            android:name=".UI.Activity.MainActivity"
             android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".UI.Activity.WelcomeActivity"

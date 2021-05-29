@@ -4,12 +4,15 @@ package com.quickpay.qpay.api;
 import com.quickpay.qpay.models.request.Register;
 import com.quickpay.qpay.models.request.ScannerCredential;
 import com.quickpay.qpay.models.request.UserCredential;
+import com.quickpay.qpay.models.response.AvlBalance;
 import com.quickpay.qpay.models.response.LoginRespBean;
 import com.quickpay.qpay.models.response.ScannerRespBean;
 
 import java.util.List;
 
 import retrofit2.http.Body;
+import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.POST;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -32,7 +35,15 @@ public interface ApiService {
 
     @POST("getpayment-historybyid")
     Call<List<ScannerRespBean>> doScanner(@Body ScannerCredential credential);
+/*
+    @POST("get-avl-amount-byuserid")
+    Call<AvlBalance>getAvlBalance();*/
 
+    @FormUrlEncoded
+    @POST("get-avl-amount-byuserid")
+    Call<AvlBalance> getAvlBalance(
+            @Field("user_id") String user_id
+    );
 
 /*
 

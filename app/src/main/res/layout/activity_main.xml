@@ -13,7 +13,7 @@
         android:layout_height="match_parent"
         android:background="@drawable/twocolorcombinebg"
         android:orientation="vertical"
-        tools:context=".MainActivity">
+        tools:context=".UI.Activity.MainActivity">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -149,7 +149,6 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:layout_weight="1"
-                                android:gravity="center"
                                 android:orientation="horizontal">
 
                                 <ImageView
@@ -164,6 +163,16 @@
                                     android:layout_marginLeft="-5dp"
                                     android:layout_marginBottom="@dimen/_2sdp"
                                     android:text="@string/credit"
+                                    android:textColor="@color/font_white"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/creditAmount"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="bottom"
+                                    android:layout_marginBottom="@dimen/_2sdp"
+                                    android:text="10000"
                                     android:textColor="@color/font_white"
                                     android:textStyle="bold" />
                             </LinearLayout>
@@ -208,6 +217,16 @@
                                         android:layout_marginStart="@dimen/_7sdp"
                                         android:layout_marginTop="@dimen/_5sdp"
                                         android:background="#CEC9C9" />
+
+                                    <TextView
+                                        android:layout_marginTop="@dimen/_12sdp"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:gravity="right"
+                                        android:layout_marginBottom="@dimen/_2sdp"
+                                        android:text="View Account"
+                                        android:textColor="@color/font_white"
+                                        android:textStyle="bold" />
                                 </LinearLayout>
 
                             </LinearLayout>

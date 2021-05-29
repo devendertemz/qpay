@@ -3,21 +3,18 @@ package com.quickpay.qpay.UI.Activity;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
-import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.quickpay.qpay.Controller.Login.LoginPresenter;
 import com.quickpay.qpay.Controller.LoginController;
 import com.quickpay.qpay.Controller.iLoginController;
-import com.quickpay.qpay.MainActivity;
 import com.quickpay.qpay.R;
 import com.quickpay.qpay.View.iLoginView;
 import com.quickpay.qpay.databinding.ActivityWelcomeBinding;
@@ -26,8 +23,6 @@ import com.quickpay.qpay.models.response.LoginRespBean;
 import com.quickpay.qpay.sharedPref.MyPreferences;
 import com.quickpay.qpay.sharedPref.PrefConf;
 import com.quickpay.qpay.util.AppUtils;
-
-import soup.neumorphism.NeumorphButton;
 
 public class WelcomeActivity extends AppCompatActivity implements iLoginView, LoginPresenter.LoginView {
     EditText ET_Number, ET_Password;
