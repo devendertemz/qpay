@@ -37,13 +37,17 @@ public class LoginRespBean {
 
         @SerializedName("id")
         @Expose
-        private Integer id;
+        private String id;
         @SerializedName("fullname")
         @Expose
         private String fullname;
         @SerializedName("phone")
         @Expose
         private String phone;
+
+        @SerializedName("upi_id")
+        @Expose
+        private String upiId;
         @SerializedName("password")
         @Expose
         private String password;
@@ -54,11 +58,11 @@ public class LoginRespBean {
         @Expose
         private String updatedAt;
 
-        public Integer getId() {
+        public String getId() {
             return id;
         }
 
-        public void setId(Integer id) {
+        public void setId(String id) {
             this.id = id;
         }
 
@@ -100,6 +104,14 @@ public class LoginRespBean {
 
         public void setUpdatedAt(String updatedAt) {
             this.updatedAt = updatedAt;
+        }
+
+        public String getUpiId() {
+            return upiId;
+        }
+
+        public void setUpiId(String upiId) {
+            this.upiId = upiId;
         }
 
     }

@@ -10,12 +10,15 @@ import android.widget.Toast;
 import com.quickpay.qpay.R;
 import com.quickpay.qpay.databinding.ActivityPayAmountBinding;
 import com.quickpay.qpay.model.ScannerModel;
+import com.quickpay.qpay.models.response.ScannerRespBean;
+import com.quickpay.qpay.sharedPref.MyPreferences;
+import com.quickpay.qpay.sharedPref.PrefConf;
 
 public class PayAmountActivity extends AppCompatActivity {
     ActivityPayAmountBinding activityPayAmountBinding;
     private View view;
 
-   public ScannerModel scannerModel;
+   public ScannerRespBean scannerModel;
 
 
     @Override
@@ -25,11 +28,12 @@ public class PayAmountActivity extends AppCompatActivity {
 
         activityPayAmountBinding = DataBindingUtil.setContentView(this, R.layout.activity_pay_amount);
         view = activityPayAmountBinding.getRoot();
-        scannerModel = (ScannerModel) getIntent().getSerializableExtra("scannerModel");
+        scannerModel = (ScannerRespBean) getIntent().getSerializableExtra("scannerModel");
         activityPayAmountBinding.setScannerModel(scannerModel);
 
+        activityPayAmountBinding.ownUpiid.setText(MyPreferences.getInstance(getApplication()).getString(PrefConf.KEY_MY_UPI_ID, ""));
 
-        Toast.makeText(this, scannerModel.fullname + "", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, scannerModel.getFullname() + "", Toast.LENGTH_SHORT).show();
 
     }
 }

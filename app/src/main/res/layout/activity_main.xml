@@ -167,12 +167,13 @@
                                     android:textStyle="bold" />
 
                                 <TextView
+                                    android:textSize="@dimen/_9sdp"
                                     android:id="@+id/creditAmount"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="bottom"
                                     android:layout_marginBottom="@dimen/_2sdp"
-                                    android:text="10000"
+                                    android:text=""
                                     android:textColor="@color/font_white"
                                     android:textStyle="bold" />
                             </LinearLayout>

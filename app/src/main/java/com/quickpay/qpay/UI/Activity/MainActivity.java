@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
-        id  = String.valueOf(MyPreferences.getInstance(getApplication()).getInteger(PrefConf.KEY_USER_ID, 0));
+        id  = String.valueOf(MyPreferences.getInstance(getApplication()).getString(PrefConf.KEY_USER_ID, "0"));
 
     }
 

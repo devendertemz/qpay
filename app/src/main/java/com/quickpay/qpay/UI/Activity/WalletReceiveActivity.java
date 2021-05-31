@@ -50,14 +50,10 @@ public class WalletReceiveActivity extends AppCompatActivity implements View.OnC
         activityWalletReceiveBinding.recbar.startAnimation(slide_right);
         //  LoginRespBean userData= MyPreferences.getInstance(this).get();
 
-        int KEY_USER_ID = MyPreferences.getInstance(getApplication()).getInteger(PrefConf.KEY_USER_ID, 0);
         activityWalletReceiveBinding.Name.setText(MyPreferences.getInstance(getApplication()).getString(PrefConf.KEY_USER_NAME, ""));
-
-        activityWalletReceiveBinding.id.setText(String.valueOf(KEY_USER_ID) + MyPreferences.getInstance(getApplication()).getString(PrefConf.KEY_USER_NAME, "") + "@okicici");
-
-
+        activityWalletReceiveBinding.id.setText(MyPreferences.getInstance(getApplication()).getString(PrefConf.KEY_MY_UPI_ID, ""));
         activityWalletReceiveBinding.number.setText(MyPreferences.getInstance(getApplication()).getString(PrefConf.KEY_USER_PHONE, ""));
-        QRGEncoder qrgEncoder = new QRGEncoder(String.valueOf(KEY_USER_ID), null, QRGContents.Type.TEXT, 500);
+        QRGEncoder qrgEncoder = new QRGEncoder(String.valueOf(MyPreferences.getInstance(getApplication()).getString(PrefConf.KEY_USER_ID, "0")), null, QRGContents.Type.TEXT, 500);
         try {
             Bitmap qrBits = qrgEncoder.encodeAsBitmap();
             activityWalletReceiveBinding.qrPlaceHolder.setImageBitmap(qrBits);

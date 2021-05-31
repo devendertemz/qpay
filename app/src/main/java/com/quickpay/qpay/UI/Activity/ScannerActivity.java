@@ -30,6 +30,8 @@ import com.quickpay.qpay.databinding.ActivityScannerBinding;
 import com.quickpay.qpay.model.ScannerModel;
 import com.quickpay.qpay.models.request.ScannerCredential;
 import com.quickpay.qpay.models.response.ScannerRespBean;
+import com.quickpay.qpay.sharedPref.MyPreferences;
+import com.quickpay.qpay.sharedPref.PrefConf;
 import com.quickpay.qpay.util.AppUtils;
 
 import java.util.List;
@@ -42,7 +44,7 @@ public class ScannerActivity extends AppCompatActivity implements View.OnClickLi
 
     CodeScanner codeScanner;
     private ScannerPresenter scannerPresenter;
-
+   private String userid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +56,7 @@ public class ScannerActivity extends AppCompatActivity implements View.OnClickLi
         context = ScannerActivity.this;
         dialog = AppUtils.hideShowProgress(context);
         scannerPresenter = new ScannerPresenter(this);
+         userid=MyPreferences.getInstance(getApplication()).getString(PrefConf.KEY_USER_ID, "");
 
         codeScanner = new CodeScanner(this, activityScannerBinding.scannerView);
         codeScanner.setDecodeCallback(new DecodeCallback() {
@@ -63,11 +66,29 @@ public class ScannerActivity extends AppCompatActivity implements View.OnClickLi
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
+                        String resultt=result.getText().trim();
+                        if (!resultt.equals(userid))
+                        {
+                            ScannerCredential user = new ScannerCredential(resultt);
+                            scannerPresenter.DoScanning(user);
+                            Toast.makeText(context, MyPreferences.getInstance(getApplication()).getString(PrefConf.KEY_USER_ID, "")+ "", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(context, resultt+ "", Toast.LENGTH_SHORT).show();
+                        }else {
+                            Snackbar.make(view,"Scanning Failed \nCan't pay self", Snackbar.LENGTH_LONG).show();
+                           /* Intent in = new Intent(ScannerActivity.this, MainActivity.class);
+
+                            startActivity(in);*/
+
+                        }
 
 
-                        ScannerCredential user = new ScannerCredential(String.valueOf(result.getText()));
+
+
+
+
+                     /*   ScannerCredential user = new ScannerCredential("1");
                         scannerPresenter.DoScanning(user);
-                        Toast.makeText(context, result.getText() + "", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, result.getText() + "", Toast.LENGTH_SHORT).show();*/
 
                         //  activityScannerBinding.getbarCodeAddress.setText(result.getText());
                         //username= result.getText();
@@ -166,11 +187,11 @@ public class ScannerActivity extends AppCompatActivity implements View.OnClickLi
     }
 
     @Override
-    public void onSuccess(List<ScannerRespBean> scannerRespBeanList, String message) {
+    public void onSuccess(ScannerRespBean scannerRespBeanList, String message) {
 
         Snackbar.make(view, message, Snackbar.LENGTH_SHORT).show();
 
-        if (scannerRespBeanList != null && scannerRespBeanList.size() > 0) {
+      /*  if (scannerRespBeanList != null && scannerRespBeanList.size() > 0) {
             for (int i = 0; i < scannerRespBeanList.size(); i++) {
                 Toast.makeText(context, scannerRespBeanList.get(0).getCreditAmt(), Toast.LENGTH_SHORT).show();
                 ScannerModel scannerModel = new ScannerModel(scannerRespBeanList.get(0).getPaymentId(),
@@ -191,13 +212,14 @@ public class ScannerActivity extends AppCompatActivity implements View.OnClickLi
 
             }
 
-        }
-
-        /*if (message.equalsIgnoreCase("ok")){
-            Snackbar.make(view, response.getCreditAmt(), Snackbar.LENGTH_SHORT).show();
-          *//*  startActivity(new Intent(this, MainActivity.class));
-            finish();*//*
         }*/
+
+        if (message.equalsIgnoreCase("ok")){
+            Intent in = new Intent(ScannerActivity.this, PayAmountActivity.class);
+            in.putExtra("scannerModel", scannerRespBeanList);
+
+            startActivity(in);
+        }
     }
 
 

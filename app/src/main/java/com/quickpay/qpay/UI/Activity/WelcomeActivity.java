@@ -116,11 +116,12 @@ public class WelcomeActivity extends AppCompatActivity implements iLoginView, Lo
     @Override
     public void onLoginSuccess(LoginRespBean response, String message) {
         Snackbar.make(view,response.getStatus() , Snackbar.LENGTH_SHORT).show();
+        Toast.makeText(context, response.getData().getUpiId()+"", Toast.LENGTH_SHORT).show();
 
         MyPreferences.getInstance(context).putBoolean(PrefConf.KEY_IS_LOGGED_IN,true);
-        MyPreferences.getInstance(context).putInteger(PrefConf.KEY_USER_ID,response.getData().getId());
+        MyPreferences.getInstance(context).putString(PrefConf.KEY_USER_ID,response.getData().getId());
         MyPreferences.getInstance(context).putString(PrefConf.KEY_USER_NAME,response.getData().getFullname());
-//        MyPreferences.getInstance(context).putString(PrefConf.KEY_MY_REFERRAL_CODE,response.getResult().getReferalCode());
+        MyPreferences.getInstance(context).putString(PrefConf.KEY_MY_UPI_ID,response.getData().getUpiId());
 
         MyPreferences.getInstance(context).putString(PrefConf.KEY_USER_PHONE,response.getData().getPhone());
 

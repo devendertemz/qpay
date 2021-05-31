@@ -8,7 +8,7 @@
 
         <variable
             name="scannerModel"
-            type="com.quickpay.qpay.model.ScannerModel" />
+            type="com.quickpay.qpay.models.response.ScannerRespBean" />
 
     </data>
 
@@ -70,12 +70,12 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:textStyle="normal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/_10sdp"
+                    android:text='@{scannerModel.upiId}'
                     android:fontFamily="@font/robotomedium"
-                    android:text='@{scannerModel.id+scannerModel.fullname+"@okicici"}'
-                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
                     android:textColor="@color/new_white"
                    />
 
@@ -154,19 +154,38 @@
                                 android:layout_height="@dimen/_3sdp"
                                 android:layout_margin="@dimen/_8sdp"
                                 android:background="@color/background2" />
-
-                            <TextView
-
+                            <LinearLayout
+                                android:orientation="horizontal"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="@dimen/_5sdp"
-                                android:layout_marginBottom="@dimen/_10sdp"
-                                android:text="Pay with"
-                                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-                                android:textColor="@color/new_white"
-                                android:textSize="@dimen/_15sdp"
+                                android:layout_height="wrap_content">
+                                <TextView
 
-                                android:textStyle="bold" />
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="@dimen/_5sdp"
+                                    android:layout_marginBottom="@dimen/_10sdp"
+                                    android:text="Pay with"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                                    android:textColor="@color/new_white"
+                                    android:textSize="@dimen/_15sdp"
+
+                                    android:textStyle="bold" />
+                                <TextView
+                                    android:id="@+id/ownUpiid"
+
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginRight="@dimen/_5sdp"
+                                    android:layout_marginBottom="@dimen/_10sdp"
+                                    android:gravity="right"
+                                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                                    android:textColor="@color/new_white"
+                                    android:textSize="@dimen/_15sdp"
+
+                                  />
+                            </LinearLayout>
+
+
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
                 </soup.neumorphism.NeumorphCardView>

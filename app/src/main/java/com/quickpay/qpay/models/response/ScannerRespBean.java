@@ -7,39 +7,20 @@ import java.io.Serializable;
 
 public class ScannerRespBean implements Serializable {
 
-    @SerializedName("payment_id")
-    @Expose
-    public String paymentId;
-    @SerializedName("user_id")
-    @Expose
-    private String userId;
-    @SerializedName("description")
-    @Expose
-    private String description;
-    @SerializedName("credit_amt")
-    @Expose
-    private String creditAmt;
-    @SerializedName("debit_amt")
-    @Expose
-    private String debitAmt;
-    @SerializedName("avl_amt")
-    @Expose
-    private String avlAmt;
-    @SerializedName("created_at")
-    @Expose
-    private String createdAt;
-    @SerializedName("updated_at")
-    @Expose
-    private String updatedAt;
+
+
     @SerializedName("id")
     @Expose
-    private String id;
+    private Integer id;
     @SerializedName("fullname")
     @Expose
     private String fullname;
     @SerializedName("email")
     @Expose
     private String email;
+    @SerializedName("upi_id")
+    @Expose
+    private String upiId;
     @SerializedName("phone")
     @Expose
     private String phone;
@@ -49,88 +30,21 @@ public class ScannerRespBean implements Serializable {
     @SerializedName("email_verified_at")
     @Expose
     private String emailVerifiedAt;
-    @SerializedName("password")
-    @Expose
-    private String password;
     @SerializedName("status")
     @Expose
     private String status;
-
-
-    @SerializedName("remember_token")
+    @SerializedName("created_at")
     @Expose
-    private String rememberToken;
+    private String createdAt;
+    @SerializedName("updated_at")
+    @Expose
+    private String updatedAt;
 
-
-    public String getPaymentId() {
-        return paymentId;
-    }
-
-    public void setPaymentId(String paymentId) {
-        this.paymentId = paymentId;
-    }
-
-    public String getUserId() {
-        return userId;
-    }
-
-    public void setUserId(String userId) {
-        this.userId = userId;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getCreditAmt() {
-        return creditAmt;
-    }
-
-    public void setCreditAmt(String creditAmt) {
-        this.creditAmt = creditAmt;
-    }
-
-    public String getDebitAmt() {
-        return debitAmt;
-    }
-
-    public void setDebitAmt(String debitAmt) {
-        this.debitAmt = debitAmt;
-    }
-
-    public String getAvlAmt() {
-        return avlAmt;
-    }
-
-    public void setAvlAmt(String avlAmt) {
-        this.avlAmt = avlAmt;
-    }
-
-    public String getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(String createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public String getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(String updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
-    public String getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -148,6 +62,14 @@ public class ScannerRespBean implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getUpiId() {
+        return upiId;
+    }
+
+    public void setUpiId(String upiId) {
+        this.upiId = upiId;
     }
 
     public String getPhone() {
@@ -174,14 +96,6 @@ public class ScannerRespBean implements Serializable {
         this.emailVerifiedAt = emailVerifiedAt;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public String getStatus() {
         return status;
     }
@@ -190,12 +104,21 @@ public class ScannerRespBean implements Serializable {
         this.status = status;
     }
 
-    public String getRememberToken() {
-        return rememberToken;
+    public String getCreatedAt() {
+        return createdAt;
     }
 
-    public void setRememberToken(String rememberToken) {
-        this.rememberToken = rememberToken;
+    public void setCreatedAt(String createdAt) {
+        this.createdAt = createdAt;
     }
+
+    public String getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(String updatedAt) {
+        this.updatedAt = updatedAt;
+    }
+
 
 }

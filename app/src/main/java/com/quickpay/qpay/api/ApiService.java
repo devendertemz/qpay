@@ -33,8 +33,11 @@ public interface ApiService {
     @POST("user-sign-in")
     Call<LoginRespBean> doLogin(@Body UserCredential credential);
 
-    @POST("getpayment-historybyid")
-    Call<List<ScannerRespBean>> doScanner(@Body ScannerCredential credential);
+   /* @POST("getpayment-historybyid")
+    Call<List<ScannerRespBean>> doScanner(@Body ScannerCredential credential);*/
+    @POST("get-user-by-id")
+    Call<ScannerRespBean> doScanner(@Body ScannerCredential credential);
+
 /*
     @POST("get-avl-amount-byuserid")
     Call<AvlBalance>getAvlBalance();*/
@@ -44,6 +47,8 @@ public interface ApiService {
     Call<AvlBalance> getAvlBalance(
             @Field("user_id") String user_id
     );
+
+
 
 /*
 

@@ -24,7 +24,7 @@ public static final int nav_home=0;
     public static final String KEY_IS_LOGGED_IN = "IS_USER_LOGGED_IN";
     public static final String KEY_IS_PROFILE_UPDATED ="IS_PROFILE_UPDATED";
     public static final String KEY_USER_NAME = "USER_NAME";
-    public static final String KEY_MY_REFERRAL_CODE = "MY_REFERRAL_CODE";
+    public static final String KEY_MY_UPI_ID = "UPI_ID";
     public static final String KEY_PARENT_REFERRAL_CODE = "PARENT_REFERRAL_CODE";
 
 
